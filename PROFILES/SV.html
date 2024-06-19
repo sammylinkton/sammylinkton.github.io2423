@@ -1,0 +1,46 @@
+<html class="m">
+
+<link rel="stylesheet" type="text/css" href="/styles.css" />
+    <head>
+        <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+    <title>SAVE DATA</title>
+    </head>
+    <body style="color: purple">
+    <center>
+    <img src="IMG/SV.png">
+    <br>
+    S.V.
+    <p id="age" title="JUL-8-2006">ERROR!</p>
+    CLASS OF 2024
+    <br>
+    <br>
+    SPECIALTY: CODING
+    <h3>SAMMIVAKKA</h3>
+    
+    </center>
+    </body>
+    <script>
+// Function to calculate age based on birthdate
+function calculateAge(birthDate) {
+    var today = new Date();
+    var birthDate = new Date(birthDate);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+// Replace placeholder with calculated age
+document.addEventListener('DOMContentLoaded', function() {
+    var birthDate = new Date('2006-07-08'); // Your birthdate
+    var age = calculateAge(birthDate);
+    var aget = age + " YEARS OLD";
+    document.getElementById('age').textContent = aget;
+});
+</script> <!--AGE-->
+</html>
