@@ -162,3 +162,11 @@ html::before {
 }
 
 
+
+.profiles {
+    animation-name: profileopen;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
