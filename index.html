@@ -1,126 +1,31 @@
-<html>
-
-<link rel="stylesheet" type="text/css" href="/styles.css" />
+<!doctype html>
+<html lang="en">
     <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
-    <title>SAVE DATA</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Steam Update</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
-    <body class="m">
-    <center>
-    <div>
-    SAVE DATA
-        <div class="container">
-            <div class="save" title="6/21/24 @ 11:26 AM">
-            11:26 AM // 6/21/24
-            <br>
-            PLAYERS: <a id="SV" style="color: purple">SV</a>,(<span style="color: purple">ST</span>)
-            <br>
-            <img src="Images/6.21.24.png" style="object-fit:fill">
-            <br> <a href="LOG/6_21_24.html">[LOG]</a>
-            </div>
-            <div class="save" title="6/20/24">
-            09:48 AM // 6/20/24
-            <br>
-            PLAYERS: <a id="SV" style="color: purple">SV</a>
-            <br>
-<img src="Images/6_20_24.png" style="object-fit:fill">
-                <br>
-            <a href="LOG/6_20_24.html">[LOG]</a>
-            </div>
-            <div class="save" title="6/18/24 @ 19:41PM">
-            19:41 PM // 6/18/24
-            <br>
-            PLAYERS: <a id="SV" style="color: purple">SV</a>,-(<a id="CB" style="color: blue">CB</a>)
-            <br>
-<img src="Images/6_18_24_1.png" style="object-fit:fill">
-                <br> [NO LOG]
-            </div>
-            <div class="save" title="6/18/24 @ 4:41AM">
-            04:43 AM // 6/18/24
-            <br>
-            PLAYERS: <a id="SV" style="color: purple">SV</a>,<a id="CB" style="color: blue">CB</a>
-            <br>
-            <img src="Images/6_18_24.png" style="object-fit:fill">
-                <br>
-                <a href="LOG/6_18_24.html">[LOG]</a>
-            </div>
-            <div class="save" title="N/a">
-            NO SAVE DATA
-            <br>
-            PLAYERS: N/A
-            <br>
-<!--            <img src="Images/6_18_24.png" style="object-fit:fill"> -->
-            </div>
-            <div class="save" title="N/a">
-            NO SAVE DATA
-            <br>
-            PLAYERS: N/A
-            <br>
-<!--            <img src="Images/6_18_24.png" style="object-fit:fill"> -->
-            </div>
-            <div class="save" title="N/a">
-            NO SAVE DATA
-            <br>
-            PLAYERS: N/A
-            <br>
-<!--            <img src="Images/6_18_24.png" style="object-fit:fill"> -->
-            </div>
-        </div>
-    </div> <!-- Saves -->
-    <div style="position: fixed;top: 9;left: 50;opacity: 0" id="profiles">PROFILE
-        <div class="container">
-        <iframe id="profile" src="./profiles/profileindex.html" style="position: relative;height: 100%;width: 100%"></iframe>
-        </div>
-        </div> <!-- Profile Window -->
-    <div>
-    <p id="replaceme"></p>
-    </div>
-    <div style="position: fixed;right: 50;top: 9">KEY MAP
-        <div class="container">
-        <span style="color: red">Store</span><br>
-        <span style="color: green">Location</span>
-        </div></div>
-        <img src="Images/WHAT.jpg" style="position: fixed;left: 30%;opacity: 0.01" draggable="false">
-        <script>
-                    // text
-        var replacementText = [
-            "This could be the last time you see this page. Enjoy.",
-            "You're life is an amazing hypothesis to be proven.",
-            "Keep yourself busy and free at the same time.",
-            "Ever wanted to touch something? Go touch it.",
-            "You can scream or cry whenever you feel the need to.",
-            "If no one will listen to you cry, I will.",
-            "Even if you don't believe it, someone out there loves you so much.",
-            "This page is my life, make yours have more... pizzazz...",
-            "I care for you.",
-            "Nothing this time, just saying 'Hi.'",
-            "Suicide is NOT an option. #988"
-            // Add more items as needed
-        ];
-var element = document.getElementById('replaceme');
-if (element) {
-    // im thinking...
-    var randomIndex = Math.floor(Math.random() * replacementText.length);
-    
-    // change
-    element.textContent = replacementText[randomIndex];
-} else {
-    console.error('How?');
-}
-        </script> <!-- For the text at the bottom -->
-        <script>
-        document.getElementById('SV').addEventListener('click', function(){
-            document.getElementById('profile').src = 'PROFILES/SV.html';
-            document.getElementById('profiles').style.opacity = 1;
-        });
-        document.getElementById('CB').addEventListener('click', function(){
-            document.getElementById('profile').src = 'PROFILES/CB.html';
-            document.getElementById('profiles').style.opacity = 1;
-        });
-        </script>
-    </center>
-</body>
 
+    <body>
+        <div title="SteamProfile" class="SteamProfile">
+            <div title="PFPImage" style="overflow: hidden;position: relative">
+                <img
+                     src="controller.png"
+                     id="Controller"
+                     style="position: absolute;margin-top: 30px;opacity: 0"
+                     />
+                <img
+                    src="Untitled.png"
+                    id="SteamPFP"
+                    style="width: 184px; height: 184px; border-style: solid; border-color: dimgrey; margin-top: 25px" />
+            </div>
+            <div id="Name" class="Name">null</div>
+           
+            
+            <div id="GameImage">
+            </div>
+        </div>
+        <script src="SteamFetch.js"></script>
+    </body>
 </html>
