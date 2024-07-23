@@ -1,6 +1,6 @@
 async function SteamFetch() {
     const urlsteam =
-        "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=70F175A9A5F1FBF5EBD95C8DFFEF849E&steamids=76561198324195037";
+        "http://cors.io/?https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=70F175A9A5F1FBF5EBD95C8DFFEF849E&steamids=76561198324195037";
     const meow = await fetch(urlsteam);
     const data = await meow.json();
     const player = data.response.players[0];
