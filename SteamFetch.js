@@ -1,6 +1,6 @@
 async function SteamFetch() {
     const urlsteam =
-         `https://corsproxy.io/?` + encodeURIComponent('https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=70F175A9A5F1FBF5EBD95C8DFFEF849E&steamids=76561198324195037');
+        `https://corsproxy.io/?` + encodeURIComponent('https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=70F175A9A5F1FBF5EBD95C8DFFEF849E&steamids=76561198324195037');
     const meow = await fetch(urlsteam);
     const data = await meow.json();
     const player = data.response.players[0];
@@ -51,10 +51,22 @@ async function SteamFetch() {
         document.getElementById("GameImage").innerHTML = "Playing " + data.response.players[0].gameextrainfo;
     }
 
-    // listing all values gotten
+    // Checking if CORS got blocked or not
 
+    if (document.getElementById("Name").innerHTML == "null") {
+
+        console.log("CORS proxy failed, displaying error text to user");
+        document.getElementById("CORSCheck").style.opacity = 1;
+
+    } else {
+        console.log("CORS proxy succeeded, heres the data I found.")
+        document.getElementById("CORSCheck").style.opacity = 0;
+        // listing all values gotten
+        
     const dataset = [player.avatarfull, player.personastate, player.personaname, player.gameid];
     console.log(dataset);
+    }
+
 }
 
 console.log("First Run");
