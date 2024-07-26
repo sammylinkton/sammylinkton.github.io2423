@@ -80,5 +80,5 @@ async function SteamFetch() {
 
 console.log("First Run");
 SteamFetch();
-console.log("Running Code in 5000 ms");
-setInterval(SteamFetch, 5000);
+console.log("Running Code in 10000 ms");
+setInterval(SteamFetch, 10000);
